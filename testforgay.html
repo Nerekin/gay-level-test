@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gay Level Test (Satire)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+    }
+    button {
+      margin: 0.5em;
+      padding: 0.8em 1.5em;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #666;
+    }
+    .hidden {
+      display: none;
+    }
+    .message {
+      max-width: 600px;
+      text-align: center;
+      margin-top: 1.5em;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #90ee90;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Do you wanna complete test for gay level?</h1>
+
+  <div id="main-buttons">
+    <button onclick="startTest()">Yes</button>
+    <button onclick="latent()">No</button>
+  </div>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    function startTest() {
+      const b = prompt("First question. Do you like Lana Del Rey? (y/N)");
+      if (!b || !"yn".includes(b.toLowerCase())) {
+        error();
+        return;
+      }
+
+      if (b.toLowerCase() === "y") {
+        show("DUDE...");
+        return;
+      }
+
+      const c = prompt("Second question. Do you like latte with femboy milk? (y/N)");
+      if (!c || !'yn'.includes(c.toLowerCase())) {
+        error();
+        return;
+      }
+
+      if (c.toLowerCase() === "n") {
+        show("Sorry, dude. But you REEEAAAAL GAY");
+        return;
+      }
+
+      const d = prompt("Third question. Do you wash your teeth? (y/N)");
+      if (!d || !'yn'.includes(d.toLowerCase())) {
+        error();
+        return;
+      }
+
+      if (d.toLowerCase() === "y") {
+        show("WTF, DUDE THIS IS DISGUSTING. TOOTHBRUSH IS LITERALLY A MINI PENIS. YOU ARE GAY!");
+      } else {
+        show("MY CONGRATULATIONS. YOU ARE LITERALLY A TRUE TRADITIONAL STRAIGHT MAN!!! I LOVE YOU BRO");
+      }
+    }
+
+    function latent() {
+      show("Dude, you are a latent gay.");
+    }
+
+    function error() {
+      show("Enter a correct letter, gay");
+    }
+
+    function show(msg) {
+      document.getElementById("main-buttons").classList.add("hidden");
+      document.getElementById("message").innerText = msg;
+    }
+  </script>
+</body>
+</html>
